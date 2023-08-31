@@ -1,0 +1,20 @@
+<div class="row center button-container">
+  <button [class]="curIdx === 'DOC' ? 'active' : ''" (click)="setActive('DOC')">
+    Compare Documents
+  </button>
+  <button
+    [class]="curIdx === 'TEXT' ? 'active' : ''"
+    (click)="setActive('TEXT')"
+  >
+    Compare Texts
+  </button>
+  <button
+    [class]="curIdx === 'REPORT' ? 'active' : ''"
+    (click)="setActive('REPORT')"
+  >
+    Report
+  </button>
+</div>
+<section class="content-container">
+  <router-outlet></router-outlet>
+</section>

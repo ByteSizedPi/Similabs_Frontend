@@ -1,0 +1,45 @@
+<h1>Text Comparison Tool</h1>
+<section class="view split">
+  <section>
+    <h2>Suspect Text</h2>
+
+    <textarea
+      id="suspect"
+      #suspect
+      placeholder="Paste suspected text"
+      (input)="compare()"
+    >
+      In the midst of the bustling city, a tall skyscraper towered over the landscape, reaching towards the clear blue sky, reflecting the rays of the sun and casting long shadows on the streets below, where people hurriedly went about their daily routines, oblivious to the grandeur of the architectural marvel that stood before them.
+      </textarea
+    >
+    <h2>Source Text</h2>
+    <textarea
+      id="source"
+      #source
+      placeholder="Paste source text"
+      (input)="compare()"
+    >
+      In the midst of the bustling city, a till skyscraper towered over the landscape, reaching towards the clear blue sky, oblivious to the grandeur of the architectural the rays of and casting long shadows on the streets below, where people hurriedly went about their daily routines, that stood before them.
+      </textarea
+    >
+    <!-- <div id="source-output"></div> -->
+  </section>
+  <section class="results">
+    <h2>Comparison Results</h2>
+    <div class="row space-between">
+      <span class="common-key">Common Text</span>
+      <span class="suspect-key">Suspect Text</span>
+      <span class="source-key">Source Text</span>
+    </div>
+    <div id="output"></div>
+    <div class="row space-between" *ngIf="simScores">
+      <score-card
+        *ngFor="let item of simScores | keyvalue; index as i"
+        [score]="item.value"
+        [title]="item.key | titlecase"
+        [description]="i"
+      ></score-card>
+    </div>
+  </section>
+</section>
+<upload-doc-button></upload-doc-button>

@@ -1,0 +1,9 @@
+<section [ngStyle]="{ 'background-color': bg() }" class="column center">
+  <div>{{ score | percent : "2.2" }}</div>
+  <span [ngStyle]="{ color: bg() }" class="center">
+    {{ title }}
+    <i #i class="fas fa-info center">
+      <div #info class="popup">{{ descriptions[description] }}</div>
+    </i>
+  </span>
+</section>

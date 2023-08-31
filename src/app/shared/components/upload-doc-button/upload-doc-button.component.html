@@ -1,0 +1,9 @@
+<label for="btn">Choose File</label>
+<input
+  type="file"
+  id="btn"
+  hidden
+  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  (input)="onFileSelected($event)"
+/>
+<!-- (change)="onFileSelected($event)" -->

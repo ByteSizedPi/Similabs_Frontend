@@ -18,7 +18,13 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@syncfusion/ej2-angular-heatmap": "^22.2.10",
+    "@syncfusion/ej2-ng-heatmap": "^16.2.50",
+    "apexcharts": "^3.42.0",
+    "ng-apexcharts": "^1.8.0",
     "rxjs": "~7.5.0",
+    "simple-text-diff": "^1.7.0",
+    "text-diff": "^1.0.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

@@ -1,0 +1,71 @@
+<section>
+  <div class="container">
+    <h3 class="text-center">Suspected Document</h3>
+    <div class="space">
+      <div class="doc row center-vertical">
+        <input
+          *ngIf="!suspect"
+          type="file"
+          id="suspect"
+          hidden
+          accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          (change)="setSuspect($event)"
+        />
+        <p *ngIf="suspect">{{ suspect.name }}</p>
+        <label for="suspect" (click)="clearSuspect()">
+          <i
+            [class]="suspect ? 'center fas fa-times' : 'center fas fa-plus'"
+          ></i>
+        </label>
+      </div>
+    </div>
+    <p class="preview">{{ suspect?.text }}</p>
+  </div>
+  <div class="container">
+    <h3 class="text-center">Comparison Documents</h3>
+    <div class="row carousel">
+      <div
+        [class]="'doc row space-between' + (selected === i ? ' active' : '')"
+        *ngFor="let doc of comparison; let i = index"
+        (click)="selected = i"
+      >
+        <p>{{ doc?.name }}</p>
+        <i class="center fas fa-times" (click)="popComparison(i)"></i>
+      </div>
+      <div *ngIf="comparison.length < 5" class="doc">
+        <input
+          type="file"
+          [id]="comparison.length"
+          hidden
+          accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          (change)="pushComparison($event)"
+        />
+        <label [for]="comparison.length">
+          <i class="center fas fa-plus"></i>
+        </label>
+      </div>
+    </div>
+    <p class="preview" *ngIf="comparison[0]">{{ comparison[selected].text }}</p>
+  </div>
+  <div class="container">
+    <!-- <img [src]="heatmaps[selected]" alt="" *ngIf="heatmaps" /> -->
+    <canvas #canvasElement width="500" height="500"></canvas>
+    <!-- <apx-chart
+      *ngIf="heatmaps"
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [dataLabels]="chartOptions.dataLabels"
+      [title]="chartOptions.title"
+      [colors]="chartOptions.colors"
+    ></apx-chart> -->
+
+    <!-- <ejs-heatmap
+      [dataSource]="heatmaps[selected]"
+      *ngIf="heatmaps"
+      theme="Material3Dark"
+      (cellSelected)="cellClick($event)"
+      [allowSelection]="true"
+    ></ejs-heatmap> -->
+    <!-- (cellClick)="cellClick($event)" -->
+  </div>
+</section>

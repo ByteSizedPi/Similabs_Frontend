@@ -1,0 +1,50 @@
+section {
+  // overflow: hidden;
+  // display: inline-block;
+  margin: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+div {
+  padding: 2rem 3rem;
+}
+
+span {
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  background-color: black;
+  border-radius: 0 0 5px 5px;
+  font-weight: 400;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+i {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 1rem;
+  // padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-left: 1rem;
+  position: relative;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  min-width: 15rem;
+  top: 0;
+  right: 3rem;
+  z-index: 1;
+
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
